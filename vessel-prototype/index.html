@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="盛航船舶管理与航线跟踪交互原型">
+  <meta name="color-scheme" content="light">
+  <title>盛航股份 · 船舶管理平台</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" as="image" href="assets/overview-content@2x.png">
+  <link rel="preload" as="image" href="assets/tracking-content@2x.png">
+</head>
+<body>
+  <main id="canvas" aria-label="盛航船舶管理平台">
+    <img class="slice topbar" src="assets/topbar@2x.png" alt="盛航股份 船舶管理平台，货物管理、船舶管理、费用管理、航线审批，张晓伟" width="1440" height="52" draggable="false">
+    <section id="overview" class="screen" aria-label="船舶运营总览">
+      <img class="slice sidebar" src="assets/overview-sidebar@2x.png" alt="船舶首页、船员管理、采购管理、机务管理、能耗管理、安监管理、海务管理" width="200" height="748" draggable="false">
+      <img class="slice overview-content" src="assets/overview-content@2x.png" alt="船舶运营总览。已到达船舶24，未分配航次48，活跃停泊位6/10，待离港船舶04。地方船舶航线进程。" width="1240" height="748" draggable="false">
+      <div id="cards" aria-label="地方船舶航线进程"></div>
+    </section>
+    <section id="tracking" class="screen" aria-label="航线跟踪" hidden>
+      <img class="slice sidebar" src="assets/tracking-sidebar@2x.png" alt="船舶管理导航，机务管理，航线跟踪" width="200" height="748" draggable="false">
+      <img class="slice tracking-title" src="assets/tracking-title@2x.png" alt="航线跟踪" width="1240" height="52" draggable="false">
+      <img class="slice tracking-progress" src="assets/tracking-progress@2x.png" alt="航线进程：已提箱100%，已装箱75%，POR进港50%，海关放行50%，码头放行50%，POL开航0%，POD到港0%，DEL待出港0%，待还箱0%" width="240" height="696" draggable="false">
+      <img class="slice tracking-content" src="assets/tracking-content@2x.png" alt="SHENGHANG 航线：南京、南通、大阪、东京。航线地图及基本信息、起运港信息、挂靠港信息。" width="760" height="696" draggable="false">
+      <button id="return" class="hotspot return" aria-label="返回船舶运营总览"></button>
+      <aside id="activity" aria-label="动态">
+        <img id="activity-order" class="activity-image" src="assets/activity-order@2x.png" alt="订单状态：已接单、一审通过、开始订舱、M单待制单、操作完成、待内审" width="240" height="696" draggable="false">
+        <img id="activity-messages" class="activity-image" src="assets/activity-messages@2x.png" alt="消息栏：码头放行进度更新、截港与开航提醒、海关放行进度更新" width="240" height="696" draggable="false" hidden>
+        <img id="activity-participants" class="activity-image" src="assets/activity-participants@2x.png" alt="参与人：张晓伟、船舶代理、南京龙潭码头、南京港报关团队" width="240" height="696" draggable="false" hidden>
+        <img class="activity-heading" src="assets/activity-order@2x.png" alt="" aria-hidden="true" width="240" height="696" draggable="false">
+        <div class="activity-tabs" role="tablist" aria-label="动态视图">
+          <button id="tab-order" class="hotspot tab" role="tab" aria-label="订单状态" aria-controls="panel-order" aria-selected="true" data-tab="order"></button>
+          <button id="tab-messages" class="hotspot tab" role="tab" aria-label="消息栏" aria-controls="panel-messages" aria-selected="false" tabindex="-1" data-tab="messages"></button>
+          <button id="tab-participants" class="hotspot tab" role="tab" aria-label="参与人" aria-controls="panel-participants" aria-selected="false" tabindex="-1" data-tab="participants"></button>
+        </div>
+        <div id="panel-order" class="sr-only" role="tabpanel" aria-labelledby="tab-order">已接单，一审通过，开始订舱，M单待制单，操作完成，待内审。</div>
+        <div id="panel-messages" class="sr-only" role="tabpanel" aria-labelledby="tab-messages" hidden>码头放行进度更新，截港与开航提醒，海关放行进度更新。</div>
+        <div id="panel-participants" class="sr-only" role="tabpanel" aria-labelledby="tab-participants" hidden>张晓伟、船舶代理、南京龙潭码头、南京港报关团队。</div>
+      </aside>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
