@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#202428">
+  <meta name="description" content="盛航船舶管理平台 · 船员档案">
+  <title>船员档案 · 盛航船舶管理平台</title>
+  <link rel="icon" href="data:,">
+  <link rel="preload" as="image" href="assets/topbar@2x.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="viewport" aria-label="盛航船舶管理平台">
+    <div id="canvas">
+      <header class="topbar"><img src="assets/topbar@2x.png" width="1440" height="52" alt="盛航股份 · 船舶管理平台，船舶管理" draggable="false"></header>
+      <nav class="sidebar" aria-label="主导航"><img src="assets/sidebar@2x.png" width="200" height="748" alt="船员管理，船员档案" draggable="false"></nav>
+      <section class="workspace" aria-label="船员档案">
+        <img class="titlebar slice" src="assets/titlebar@2x.png" width="1240" height="52" alt="船员档案" draggable="false">
+        <button class="hotspot upload-action" id="upload" aria-label="批量上传" disabled></button>
+        <button class="hotspot template-action" id="template" aria-label="模板下载" title="模板下载"></button>
+        <button class="hotspot create-action" id="create" aria-label="新建档案" title="新建档案"></button>
+        <div class="filters">
+          <img src="assets/filters@2x.png" width="474" height="32" alt="" draggable="false">
+          <input id="search" class="slice-input" type="search" aria-label="搜索姓名或工号" autocomplete="off" spellcheck="false">
+          <button id="department" class="hotspot filter-button department" aria-label="筛选部门" aria-haspopup="listbox" aria-expanded="false"><span></span></button>
+          <button id="role" class="hotspot filter-button role" aria-label="筛选主岗位" aria-haspopup="listbox" aria-expanded="false"><span></span></button>
+        </div>
+        <div class="table-header" id="table-header">
+          <img src="assets/table-header@2x.png" width="1208" height="46" alt="姓名，部门，主岗位，合同信息，手机号，身份证号，家庭住址，操作" draggable="false">
+          <input class="check-control all-check" id="select-all" type="checkbox" aria-label="选择全部船员">
+          <button class="hotspot star-control all-star" id="favorites" aria-label="只看收藏" aria-pressed="false" title="只看收藏"></button>
+        </div>
+        <div class="rows" id="rows" role="list" aria-label="船员档案列表" tabindex="-1"></div>
+        <footer class="pagination">
+          <img src="assets/pagination@2x.png" width="1240" height="50" alt="共计500条" draggable="false">
+          <span id="result-count" hidden></span>
+          <div id="pager" aria-label="分页"></div>
+          <select id="page-size" aria-label="每页显示条数"><option value="10">10条/页</option><option value="20">20条/页</option><option value="50">50条/页</option></select>
+          <input id="page-jump" aria-label="前往页码" type="text" inputmode="numeric" autocomplete="off">
+        </footer>
+      </section>
+      <div id="menu" class="menu" role="listbox" hidden></div>
+      <div id="modal-layer" hidden>
+        <section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"></section>
+      </div>
+      <div id="toast" class="toast" role="status" hidden></div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
