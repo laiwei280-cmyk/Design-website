@@ -1,0 +1,54 @@
+/* Floating project navigation; independent of the homepage header. */
+:root { --site-header-height: 88px; }
+.project-topbar {
+  position: sticky;
+  top: 12px;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  min-height: 64px;
+  margin: 12px 16px;
+  padding: 10px 20px;
+  border: 1px solid #ffffffb3;
+  border-radius: 20px;
+  background: var(--project-header-bg, #ecf0f4e8);
+  color: #242a32;
+  box-shadow: 0 8px 28px #42556b0b, inset 0 1px 0 #fff9;
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+.project-title-link { display: inline-flex; align-items: center; gap: 14px; min-width: 0; width: fit-content; font-size: 16px; font-weight: 750; line-height: 1.5; }
+.project-title-link > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.project-title-link > span:first-child { flex: none; font-size: 18px; }
+.project-section-nav, .project-page-nav { display: flex; align-items: center; gap: 3px; padding: 5px; background: var(--project-nav-bg, #dce2e9); border-radius: 999px; }
+.project-section-link, .project-page-link { display: block; flex: none; padding: 9px 15px; color: var(--project-nav-ink, #697480); font-size: 12px; font-weight: 600; white-space: nowrap; line-height: 1.4; transition: background .2s, color .2s; }
+.project-section-link { border-radius: 999px; }
+.project-page-nav { justify-self: end; border-radius: 14px; }
+.project-page-link { padding-inline: 14px; border-radius: 10px; }
+.project-section-link:hover, .project-page-link:hover { color: #15191e; background: #ffffff80; }
+.project-section-link[aria-current], .project-page-link[aria-current] { background: #171a1d; color: #fff; box-shadow: 0 2px 8px #151a2426; }
+.project-topbar a:focus-visible { outline: 2px solid #5166ef; outline-offset: 3px; }
+@media (min-width: 801px) and (max-width: 1150px) {
+  .project-topbar { gap: 12px; padding-inline: 14px; }
+  .project-title-link { gap: 9px; font-size: 14px; }
+  .project-section-link, .project-page-link { padding-inline: 10px; font-size: 11px; }
+}
+@media (max-width: 800px) {
+  :root { --site-header-height: 128px; }
+  .project-topbar { top: 8px; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; margin: 8px 10px; padding: 12px; border-radius: 18px; }
+  .project-title-link { font-size: 13px; gap: 8px; }
+  .project-title-link > span:first-child { font-size: 15px; }
+  .project-page-nav { grid-column: 2; grid-row: 1; padding: 3px; gap: 0; border-radius: 12px; }
+  .project-page-link { padding: 8px; font-size: 10px; border-radius: 9px; }
+  .project-section-nav { grid-column: 1 / -1; grid-row: 2; justify-content: center; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 4px; }
+  .project-section-link { padding: 9px 12px; font-size: 11px; }
+}
+@media (max-width: 360px) {
+  .project-title-link { font-size: 11px; gap: 5px; }
+  .project-page-link { padding-inline: 6px; font-size: 9px; }
+  .project-section-link { padding-inline: 9px; font-size: 10px; }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .project-topbar { background: #ecf0f4; } }
+@media (prefers-reduced-motion: reduce) { .project-topbar a { transition: none; } }

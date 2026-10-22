@@ -1,0 +1,35 @@
+/* The original 7680x4320 page remains the composition's coordinate system. */
+.vessel-composition{position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden;isolation:isolate}
+.vessel-composition>a{display:block;cursor:zoom-in}
+.vessel-composition>.vessel-poster,.vessel-composition>a>img{display:block;width:100%;height:auto;margin:0}
+.vessel-prototype-window{position:absolute;left:0;top:32.7083333333%;width:48.7239583333%;height:55.787037037%;overflow:hidden;isolation:isolate}
+.vessel-hotspots{position:absolute;left:0;top:0;width:3742px;height:2410px;transform-origin:0 0;transform:scale(var(--vessel-artwork-scale,0))}
+.vessel-card-hit{position:absolute;left:38.6667px;top:835.4444px;width:1173.3333px;height:684.4444px;margin:0;padding:0;border:0;border-radius:12.22px;background:transparent;appearance:none;transition:box-shadow 160ms ease-out}
+button.vessel-card-hit{cursor:pointer}
+.vessel-card-hit:hover{box-shadow:0 18.33px 55px rgba(77,103,135,.24)}
+.vessel-card-hit:focus-visible{outline:6px solid #035dff;outline-offset:4px}
+.vessel-live{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity 180ms ease-out}
+.vessel-live.is-open{opacity:1;pointer-events:auto}
+.vessel-frame{position:absolute;left:calc(-658px * var(--vessel-artwork-scale,0));top:0;display:block;width:1440px;height:800px;max-width:none;margin:0;border:0;transform-origin:0 0;transform:scale(var(--vessel-prototype-scale,0))}
+.vessel-mini-entry{position:absolute;left:55.57%;top:53.09%;width:20.83%;height:22.05%;margin:0;padding:0;border:0;background:transparent;cursor:pointer}
+.vessel-mini-entry:focus-visible{outline:2px solid #035dff;outline-offset:2px}
+.preview-artwork.vessel-composition{flex:none;max-width:100%;max-height:100%;cursor:zoom-out}
+@media(prefers-reduced-motion:reduce){.vessel-card-hit,.vessel-live{transition:none}}
+
+/* A separate reading aid between artwork pages 08 and 09: exactly 10px on both sides. */
+#vessel-interactive{margin-bottom:10px}
+.vessel-interaction-guide{display:flex;align-items:center;gap:12px;margin:0 0 10px;padding:12px;border:1px solid #d8e0e9;border-radius:10px;background:#e6ecf2;color:#526174}
+.vessel-guide-label{display:flex;align-items:center;justify-content:center;gap:8px;flex:0 0 80px;font-size:11px;font-weight:650;white-space:nowrap}
+.vessel-guide-label svg{flex:none}
+.vessel-guide-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;flex:1;min-width:0;list-style:none;margin:0;padding:0}
+.vessel-guide-step{display:grid;grid-template-columns:44px minmax(0,1fr);align-items:center;gap:8px;min-width:0;padding:7px;border:1px solid #e1e6ed;border-radius:7px;background:#ffffffb8}
+.vessel-guide-step strong{display:block;margin:0;color:#34445a;font-size:10px;font-weight:700;line-height:1.5}
+.vessel-guide-step p{margin:2px 0 0;color:#748092;font-size:10px;line-height:1.5}
+.vessel-guide-shot{position:relative;display:block;width:44px;height:34px;border:1px solid #e4e8ee;border-radius:4px;background-color:#fff;background-repeat:no-repeat}
+.vessel-guide-shot>span{position:absolute;right:2px;top:2px;display:grid;place-items:center;width:14px;height:14px;border-radius:50%;background:#166bff;color:#fff;font:700 9px/1 Manrope,sans-serif;box-shadow:0 1px 4px #166bff40}
+.vessel-guide-shot-card{background-image:url('vessel-prototype/assets/overview-content@2x.png');background-size:142.083px 85.708px;background-position:-3.208px -24.979px}
+.vessel-guide-shot-messages{background-image:url('vessel-prototype/assets/activity-messages@2x.png');background-size:44px 127.6px;background-position:0 -14px}
+.vessel-guide-shot-people{background-image:url('vessel-prototype/assets/activity-participants@2x.png');background-size:44px 127.6px;background-position:0 -14px}
+.vessel-guide-shot-return{background-image:url('vessel-prototype/assets/tracking-title@2x.png');background-size:660px 27.677px;background-position:-5px 3px}
+@media(max-width:1100px){.vessel-interaction-guide{gap:8px;padding:10px}.vessel-guide-label{flex-basis:70px}.vessel-guide-step{grid-template-columns:36px minmax(0,1fr);gap:6px;padding:6px}.vessel-guide-shot{width:36px;height:32px}.vessel-guide-step strong,.vessel-guide-step p{font-size:9px}}
+@media(max-width:800px){.vessel-interaction-guide{align-items:stretch;flex-direction:column;gap:10px}.vessel-guide-label{flex-basis:auto;justify-content:flex-start;font-size:11px}.vessel-guide-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.vessel-guide-step{grid-template-columns:44px minmax(0,1fr);gap:8px;padding:8px}.vessel-guide-shot{width:44px;height:34px}.vessel-guide-step strong,.vessel-guide-step p{font-size:10px}}

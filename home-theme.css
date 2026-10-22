@@ -1,0 +1,81 @@
+/* Homepage palette matches the Shenghang gray-blue reading environment. */
+:root {
+  color-scheme: light;
+  --paper: #ecf0f4;
+  --ink: #253449;
+  --secondary: #5e6e82;
+  --muted: #5e6e82;
+  --line: #cdd6e0;
+  --accent: #466a99;
+  --home-surface: #e3e9f0;
+}
+::selection { background: #c8d8eb; color: var(--ink); }
+.skip-link { background: #3d587b; }
+.site-header-glass { background: #ecf0f4eb; box-shadow: inset 0 -1px 0 var(--line); }
+.site-header { color: var(--ink); }
+.site-header .nav-link, .site-header .nav-link span { color: var(--muted); }
+.site-header .nav-link:hover, .site-header .nav-link.active { color: var(--ink); }
+.site-header .header-contact { border-color: #b8c5d4; }
+.site-header .header-contact:hover { background: #ffffff80; }
+.site-header .header-design-spec { background: #181b1f; border-color: #181b1f; color: #fff; }
+.site-header .header-design-spec:hover { background: #2b3036; border-color: #2b3036; }
+
+.hero-name-cn { color: #272a26; }
+.hero-biography { color: var(--muted); }
+.hero-biography strong { color: var(--ink); }
+.button-dark { background: #3d587b; color: #fff; }
+.button-dark:hover { background: #2d4565; }
+.hero-pill-secondary { color: var(--ink); background: #fff; border-color: var(--line); box-shadow: 0 2px 8px #3148670c; }
+.hero-pill-secondary:hover { border-color: #8fa8c5; }
+.hero-bottom > p > span, .hero-principles, .scroll-link { color: var(--muted); }
+.hero-principles { border-color: var(--line); }
+.hero-principles > i { background: var(--line); }
+.scroll-link > span { border-color: #b8c5d4; }
+
+.expertise.capabilities, .work.project-showcase { color: var(--ink); }
+.capabilities-eyebrow, .capabilities-meta > span:first-child, .work-showcase-eyebrow,
+.work-placeholder-meta > span:first-child, .capabilities .resume-icon, .capabilities .resume-link { color: var(--accent); }
+.capabilities-eyebrow, .work-showcase-eyebrow { color: #1b64db; }
+.capabilities-summary, .capabilities-item > p, .capabilities-meta > span:last-child,
+.capabilities .resume-box > div > span, .work-showcase-summary, .work-placeholder-meta > span:last-child,
+.work-placeholder-body > p, .work-placeholder-tags li, .content-note { color: var(--muted); }
+.capabilities-item + .capabilities-item, .capabilities .capability-resume,
+.capabilities-item, .resume-box, .resume-icon, .capabilities-symbol,
+.work-showcase-grid, .work-placeholder-card + .work-placeholder-card,
+.work-placeholder-cover, .work-placeholder-tags li { border-color: var(--line); }
+.capabilities-symbol svg { stroke: var(--ink); }
+.work-placeholder-body { background: #f3f6f9; }
+.work-placeholder-cover, .work-placeholder-cover-02, .work-placeholder-cover-03 { background: var(--home-surface); }
+.work-card-link:hover .work-placeholder-heading h3 { color: var(--accent); }
+.work-placeholder-image { color: var(--muted); }
+.work-placeholder-image svg { stroke: #7c91ab; }
+
+.site-footer { background: var(--home-surface); }
+.footer-top .eyebrow, .footer-top h2 > span, .footer-contact, .footer-brand { color: var(--accent); }
+.footer-bottom, .footer-brand > span { color: var(--muted); }
+.footer-arrow, .footer-bottom { border-color: #bfccdb; }
+.footer-contact:hover .footer-arrow { background: #d3deeb; }
+.site-footer .footer-contact { gap: 16px; font-size: 32px; line-height: 1; }
+.site-footer .footer-arrow { width: 32px; height: 32px; flex: 0 0 32px; font-size: 24px; line-height: 1; }
+@media (min-width: 601px) {
+  .site-footer .footer-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 24px; row-gap: 18px; }
+  .site-footer .footer-top > div { display: contents; }
+  .site-footer .footer-top .eyebrow { grid-area: 1 / 1 / 2 / 3; }
+  .site-footer .footer-top h2 { grid-area: 2 / 1; margin-top: 0; }
+  .site-footer .footer-contact { grid-area: 2 / 2; margin-top: 0; align-self: center; }
+}
+@media (max-width: 360px) {
+  .site-footer .footer-contact { gap: 12px; font-size: 28px; }
+}
+
+dialog { border-color: var(--line); box-shadow: 0 20px 90px #31486726; }
+dialog::backdrop { background: #62768f66; }
+.dialog-header > span, .dialog-close, .contact-body > p, .contact-qr-panel > span,
+.contact-body .contact-email, .contact-pending, .case-summary, .case-details p { color: var(--muted); }
+.dialog-close:hover { background: #dce4ed; }
+.contact-body .contact-email:hover { color: var(--ink); }
+.case-body > .eyebrow { color: var(--accent); }
+.case-notice { background: var(--home-surface); border-color: #8fa8c5; color: var(--muted); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .site-header-glass { background: var(--paper); }
+}

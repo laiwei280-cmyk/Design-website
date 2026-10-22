@@ -1,0 +1,119 @@
+/* Resume shares the portfolio's gray-blue paper, type and quiet editorial rhythm. */
+.resume-page{--resume-surface:#f8fafc;--resume-blue:#1b64db;--resume-border:#d0dbe7;--resume-secondary:#5e6e82;color:var(--ink);font-family:var(--font)}
+.resume-shell{max-width:1440px;margin:auto;padding:0 7%}
+.resume-intro{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:18px 72px;align-items:start;padding:66px 0 43px}
+.resume-intro::before{content:"";position:absolute;inset:0 -6% -30px;z-index:-1;pointer-events:none;background-image:linear-gradient(#a9c2df24 1px,transparent 1px),linear-gradient(90deg,#a9c2df24 1px,transparent 1px);background-size:43px 43px;mask-image:radial-gradient(ellipse at 40% 40%,#000 12%,transparent 70%)}
+.resume-eyebrow{font:650 11px/1.7 var(--font);letter-spacing:1.2px;color:var(--resume-blue);margin:0}
+.resume-identity{min-width:0;grid-column:1;grid-row:1}
+.resume-identity h1{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px 24px;margin:25px 0 14px;font:650 clamp(58px,6.2vw,88px)/1.2 var(--chinese);letter-spacing:-2px}
+.resume-identity h1>span{font:650 clamp(48px,5.1vw,72px)/1.2 var(--font);letter-spacing:-3px;color:transparent;-webkit-text-stroke:1px #91a4bd}
+.resume-role{font:500 20px/1.7 var(--font);color:#3b5474;margin:0}
+.resume-portrait{grid-column:2;grid-row:1/5;margin:8px 0 0;padding:9px 9px 0;border:1px solid #d8e1eb;border-radius:12px;background:#ffffffb8;box-shadow:0 8px 28px #40557008}
+.resume-portrait img{display:block;width:100%;height:auto;border-radius:6px;background:#fff}
+.resume-portrait figcaption{font:9px/1.8 var(--font);letter-spacing:1.4px;color:#6e829d;text-align:center;padding:12px 0}
+.resume-summary{grid-column:1;grid-row:2;max-width:760px;font:14px/2 var(--chinese);color:var(--resume-secondary);margin:0}
+.resume-summary strong{font-weight:600;color:#314b6e}
+.resume-identity-tags{grid-column:1;grid-row:3;list-style:none;display:flex;gap:8px;flex-wrap:wrap;padding:0;margin:0}
+.resume-identity-tags li{font:11px/1.7 var(--chinese);color:#5d7595;border:1px solid #cad7e6;border-radius:999px;background:#f7fafc99;padding:4px 11px}
+.resume-intro-actions{grid-column:1;grid-row:4;display:flex;align-items:center;gap:28px;margin-top:4px}
+.resume-button{display:inline-flex;align-items:center;justify-content:center;gap:28px;min-height:42px;padding:10px 17px;border:1px solid transparent;border-radius:999px;font:500 12px/1.7 var(--font);transition:background .2s,transform .2s}
+.resume-button>span{font-size:18px;line-height:1}
+.resume-button-primary{background:#3d587b;color:#fff}
+.resume-button-primary:hover{background:#2d4565;transform:translateY(-2px)}
+.resume-text-link{display:inline-flex;align-items:center;gap:15px;padding:0;font:12px/1.8 var(--font);color:#536f93}
+.resume-contact-dialog .contact-qr-panel{width:206px;max-width:100%;margin:22px auto 0}
+.resume-contact-dialog .wechat-qr-crop{position:relative;width:100%;aspect-ratio:1;overflow:hidden;background:#fff}
+.resume-contact-dialog .wechat-qr-source{position:absolute;display:block;width:116.8421053%;max-width:none;height:auto;left:-8.4210526%;top:-47.8947368%;filter:grayscale(1)}
+.resume-text-link:hover,.resume-project-link:hover,.resume-source-link:hover{color:#1b64db}
+.resume-highlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:25px 0;margin-bottom:48px}
+.resume-highlights>div{padding:0 28px;min-width:0}
+.resume-highlights>div:first-child{padding-left:0}
+.resume-highlights>div+div{border-left:1px solid var(--line)}
+.resume-highlights strong{display:block;font:650 40px/1.4 var(--font);letter-spacing:-1.5px;color:#3c5b83}
+.resume-highlights strong>span{font-size:25px;margin-left:3px;font-weight:500}
+.resume-highlights p{font:600 12px/1.8 var(--chinese);color:#3b5271;margin:4px 0 3px}
+.resume-highlights small{font:10px/1.8 var(--chinese);color:var(--resume-secondary)}
+.resume-layout{display:grid;grid-template-columns:248px minmax(0,1fr);gap:42px;align-items:start}
+.resume-sidebar{position:sticky;top:calc(var(--site-header-height) + 26px);min-width:0}
+.resume-contact-card{background:var(--resume-surface);border:1px solid var(--resume-border);border-radius:12px;padding:23px 21px}
+.resume-overline{font:600 9px/1.8 var(--font);letter-spacing:1px;color:#5b7da8;margin:0 0 9px}
+.resume-contact-card h2{font:600 19px/1.6 var(--chinese);margin:0 0 22px;color:#314862}
+.resume-contact-links{display:flex;flex-direction:column;gap:17px}
+.resume-contact-links>a{display:block;min-width:0}
+.resume-contact-links>a>span{display:block;font:10px/1.7 var(--chinese);color:#6d8099;margin-bottom:4px}
+.resume-contact-links strong{font:500 12px/1.8 var(--font);color:#3f5c80;overflow-wrap:anywhere}
+.resume-contact-links a:hover strong{color:var(--resume-blue)}
+.resume-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 12px;margin:23px 0 21px;padding-top:21px;border-top:1px solid #dbe3ed}
+.resume-facts>div{min-width:0}
+.resume-facts dt{font:10px/1.8 var(--chinese);color:#6d8099;margin:0 0 3px}
+.resume-facts dd{font:12px/1.8 var(--font);color:#415976;margin:0;overflow-wrap:anywhere}
+.resume-source-link{display:flex;align-items:center;justify-content:space-between;padding-top:15px;border-top:1px solid #dbe3ed;font:11px/1.8 var(--chinese);color:#587aa7}
+.resume-toc{margin-top:25px;padding:0 5px}
+.resume-toc>p{font:10px/1.8 var(--chinese);color:#6f8098;margin:0 0 11px}
+.resume-toc>a{display:flex;align-items:center;gap:14px;border-radius:5px;padding:10px 12px;font:12px/1.8 var(--chinese);color:#5e7390}
+.resume-toc>a>span{font:10px/1.8 var(--font);color:#7290b6}
+.resume-toc>a[aria-current="location"]{background:#dfe8f3;color:#334f73;font-weight:600}
+.resume-toc>a:hover{color:#1b64db}
+.resume-toc .resume-back-work{margin-top:13px;padding-top:16px;border-top:1px solid #d2dce8;border-radius:0;font-size:11px;justify-content:space-between}
+.resume-content{min-width:0}
+.resume-section{margin-bottom:42px;scroll-margin-top:28px}
+.resume-section-heading{margin:0 0 20px}
+.resume-section-heading .resume-eyebrow{font-size:10px;letter-spacing:1px}
+.resume-section-heading h2{font:600 28px/1.6 var(--chinese);letter-spacing:-.5px;margin:8px 0 0;color:#253c5a}
+.resume-surface{border:1px solid var(--resume-border);border-radius:12px;background:var(--resume-surface)}
+.resume-education{padding:29px}
+.resume-school-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.resume-school-heading h3{font:600 23px/1.6 var(--chinese);margin:0;color:#2e4768}
+.resume-school-heading p{font:13px/1.9 var(--chinese);color:#5e7390;margin:8px 0 0}
+.resume-small-pill{display:inline-flex;align-items:center;border:1px solid #d4dfec;border-radius:999px;padding:5px 10px;white-space:nowrap;color:#587aa6;font:11px/1.8 var(--chinese);background:#edf3fa;margin-top:3px}
+.resume-academic{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:25px 0;padding:21px 0;border-top:1px solid #dce4ee;border-bottom:1px solid #dce4ee}
+.resume-academic>div+div{border-left:1px solid #dce4ee;padding-left:25px}
+.resume-academic span{display:block;font:10px/1.8 var(--font);color:#657b98;margin-bottom:5px}
+.resume-academic strong{font:600 28px/1.6 var(--font);letter-spacing:-.7px;color:#496b9c}
+.resume-academic small{font:12px/1.8 var(--font);color:#6983a4;margin-left:3px;letter-spacing:0}
+.resume-course-block h4,.resume-awards h4{font:600 12px/1.8 var(--chinese);color:#425e82;margin:0 0 12px}
+.resume-chips{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0}
+.resume-chips li{border:1px solid #d9e3ef;background:#fff;border-radius:5px;padding:6px 10px;color:#617a9b;font:11px/1.8 var(--chinese)}
+.resume-awards{margin-top:24px;padding-top:20px;border-top:1px solid #dce4ee}
+.resume-awards>div{display:flex;align-items:baseline;justify-content:space-between;gap:15px}
+.resume-awards h4{margin:0}
+.resume-awards span{font:10px/1.8 var(--font);color:#7085a1;white-space:nowrap}
+.resume-awards p{font:12px/1.9 var(--chinese);color:#587392;margin:10px 0 0}
+.resume-awards i{font-style:normal;color:#a3b7cf;margin:0 10px}
+.resume-timeline{padding:5px 27px}
+.resume-job{position:relative;display:grid;grid-template-columns:145px minmax(0,1fr);align-items:center;gap:21px;padding:25px 0}
+.resume-job+.resume-job{border-top:1px solid #dce4ee}
+.resume-job-time{font:10px/1.9 var(--font);color:#6982a2;margin:0}
+.resume-job h3{font:600 15px/1.8 var(--chinese);color:#314d70;margin:0}
+.resume-job>div>p{font:12px/1.8 var(--font);color:#647c99;margin:6px 0 0}
+.resume-current{position:absolute;left:0;bottom:13px;display:inline-block;font:9px/1.6 var(--chinese);color:#3f6d99;padding:2px 7px;background:#e5effb;border-radius:999px}
+.resume-job:first-child .resume-job-time{align-self:start;margin-top:5px}
+.resume-project{padding:29px;margin-bottom:22px}
+.resume-project-meta{display:flex;align-items:center;justify-content:space-between;gap:14px;font:10px/1.8 var(--font);color:#6a829f;margin-bottom:16px}
+.resume-project-meta>span:first-child{color:#4571a6}
+.resume-project-meta>span:last-child{white-space:nowrap}
+.resume-project-title{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.resume-project-title h3{font:600 23px/1.6 var(--chinese);letter-spacing:-.3px;color:#2c4666;margin:0}
+.resume-project-title>a{display:grid;place-items:center;width:32px;height:32px;border:1px solid #cad8e9;border-radius:50%;flex:none;color:#6487b5;font-size:21px;margin-top:2px}
+.resume-project-title>a:hover{background:#e6eef8;color:#1b64db}
+.resume-project-background{font:13px/2 var(--chinese);color:#5e7390;margin:16px 0 19px}
+.resume-project-tags{display:flex;flex-wrap:wrap;gap:7px;list-style:none;margin:0 0 24px;padding:0}
+.resume-project-tags li{border:1px solid #cfdef0;border-radius:999px;padding:4px 10px;font:10px/1.8 var(--chinese);color:#587ca7;background:#edf3fb}
+.resume-output-title{font:600 12px/1.8 var(--chinese);color:#3d5a7d;margin:0 0 18px;padding-top:21px;border-top:1px solid #dce4ee}
+.resume-deliverables{list-style:none;counter-reset:resume-point;padding:0;margin:0}
+.resume-deliverables>li{counter-increment:resume-point;position:relative;padding-left:33px;margin:0 0 20px}
+.resume-deliverables>li:last-child{margin-bottom:0}
+.resume-deliverables>li::before{content:"0" counter(resume-point);position:absolute;left:0;top:2px;font:600 10px/1.8 var(--font);color:#8ca5c5}
+.resume-deliverables strong{display:block;font:600 13px/1.8 var(--chinese);color:#3c587c;margin-bottom:5px}
+.resume-deliverables p{font:12px/2 var(--chinese);color:#607794;margin:0}
+.resume-project-link{display:inline-flex;align-items:center;gap:21px;font:500 11px/1.9 var(--chinese);color:#527caf;margin:25px 0 0 33px}
+.resume-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:26px;margin-top:16px;padding:35px 0 25px;border-top:1px solid var(--line)}
+.resume-footer h2{font:600 26px/1.6 var(--chinese);color:#334e72;margin:11px 0 0}
+.resume-footer-meta{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-basis:100%;font:10px/1.8 var(--font);color:#6d829e;margin:15px 0 0;padding-top:20px;border-top:1px solid var(--line)}
+.resume-page a:focus-visible{outline:2px solid #466a99;outline-offset:4px}
+@media(max-width:1200px){.resume-shell{padding-inline:6%}.resume-intro{gap:17px 45px;grid-template-columns:minmax(0,1fr) 160px;padding-top:54px}.resume-identity h1{font-size:68px;gap:10px 20px}.resume-identity h1>span{font-size:57px}.resume-layout{grid-template-columns:224px minmax(0,1fr);gap:27px}.resume-contact-card{padding:22px 17px}.resume-contact-links strong{font-size:11px}.resume-education,.resume-project{padding:25px}.resume-school-heading h3{font-size:21px}.resume-job{grid-template-columns:1fr;gap:9px;padding:22px 0}.resume-job:first-child{padding-bottom:25px}.resume-job:first-child .resume-job-time{margin-top:0}.resume-current{left:auto;right:0;top:22px;bottom:auto}.resume-job h3{font-size:15px}.resume-job>div>p{margin-top:4px}.resume-project-title h3{font-size:21px}.resume-timeline{padding-inline:25px}.resume-academic strong{font-size:26px}}
+@media(max-width:900px){.resume-layout{grid-template-columns:1fr;gap:31px}.resume-sidebar{position:static}.resume-toc{display:none}.resume-contact-card{padding:23px}.resume-contact-card h2{margin-bottom:17px}.resume-contact-links{display:grid;grid-template-columns:1fr 1fr;gap:20px}.resume-contact-links strong{font-size:13px}.resume-facts{grid-template-columns:repeat(6,minmax(0,1fr));margin-top:20px;padding-top:18px}.resume-facts dd{font-size:11px}.resume-source-link{max-width:250px}.resume-section{margin-bottom:34px}.resume-job{grid-template-columns:145px minmax(0,1fr);gap:20px;padding:25px 0}.resume-current{right:auto;left:0;top:auto;bottom:10px}.resume-identity h1{font-size:61px}.resume-identity h1>span{font-size:51px}.resume-intro{gap:16px 27px;grid-template-columns:minmax(0,1fr) 140px}.resume-summary{font-size:13px}.resume-identity h1{margin-top:22px}.resume-highlights{margin-bottom:31px}.resume-footer h2{font-size:24px}}
+@media(max-width:650px){.resume-shell{padding-inline:7%}.resume-intro{grid-template-columns:minmax(0,1fr) 88px;gap:17px 18px;padding:34px 0 29px}.resume-identity h1{display:block;font-size:54px;letter-spacing:-1px;margin:18px 0 10px}.resume-identity h1>span{display:block;font-size:40px;letter-spacing:-1.7px;margin-top:7px}.resume-eyebrow{font-size:9px;letter-spacing:.7px}.resume-role{font-size:16px}.resume-portrait{grid-row:1;margin-top:40px;padding:5px 5px 0;border-radius:8px}.resume-portrait img{border-radius:4px}.resume-portrait figcaption{font-size:6px;letter-spacing:.5px;padding:8px 0}.resume-summary{grid-column:1/-1;grid-row:2;font-size:12px;line-height:2}.resume-identity-tags{grid-column:1/-1;grid-row:3;gap:7px}.resume-identity-tags li{font-size:9px;padding:4px 9px}.resume-intro-actions{grid-column:1/-1;grid-row:4;gap:24px;margin-top:2px}.resume-button{font-size:11px;padding:9px 14px;min-height:39px;gap:20px}.resume-text-link{font-size:11px}.resume-highlights{padding:19px 0;margin-bottom:25px}.resume-highlights>div{padding:0 13px}.resume-highlights strong{font-size:31px;letter-spacing:-1px}.resume-highlights strong>span{font-size:20px}.resume-highlights p{font-size:10px;line-height:1.8;margin:3px 0 5px}.resume-highlights small{font-size:8px;line-height:1.7;display:block}.resume-layout{gap:27px}.resume-contact-card{padding:21px 18px}.resume-contact-card h2{font-size:19px;margin-bottom:15px}.resume-contact-links{grid-template-columns:1fr;gap:13px}.resume-contact-links a{display:flex;align-items:baseline;gap:18px}.resume-contact-links>a>span{margin:0;font-size:10px;flex:none;width:24px}.resume-contact-links strong{font-size:12px;min-width:0}.resume-facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 12px;margin:18px 0}.resume-facts dt{font-size:9px}.resume-facts dd{font-size:11px}.resume-source-link{max-width:none;font-size:10px;padding-top:14px}.resume-section-heading{margin-bottom:16px}.resume-section-heading .resume-eyebrow{font-size:9px}.resume-section-heading h2{font-size:25px;margin-top:6px}.resume-section{margin-bottom:29px;scroll-margin-top:19px}.resume-education,.resume-project{padding:22px 18px;border-radius:10px}.resume-school-heading{display:block}.resume-school-heading h3{font-size:21px}.resume-school-heading p{font-size:12px;margin-top:6px}.resume-small-pill{font-size:10px;margin-top:13px;padding:4px 9px}.resume-academic{gap:13px;padding:18px 0;margin:20px 0}.resume-academic>div+div{padding-left:19px}.resume-academic strong{font-size:25px}.resume-academic small{font-size:10px}.resume-academic span{font-size:9px}.resume-chips{gap:7px}.resume-chips li{font-size:10px;padding:5px 8px}.resume-course-block h4,.resume-awards h4{font-size:11px}.resume-awards{margin-top:20px;padding-top:17px}.resume-awards>div{display:block}.resume-awards span{display:block;font-size:9px;margin-top:5px}.resume-awards p{font-size:11px;margin-top:10px}.resume-awards i{margin-inline:6px}.resume-timeline{padding:2px 18px;border-radius:10px}.resume-job{grid-template-columns:1fr;gap:10px;padding:21px 0}.resume-job-time{font-size:10px}.resume-job h3{font-size:14px}.resume-job>div>p{font-size:11px;margin-top:4px}.resume-current{left:auto;right:0;top:21px;bottom:auto;font-size:8px}.resume-project-meta{font-size:9px;gap:11px;flex-wrap:wrap;margin-bottom:13px}.resume-project-title{gap:12px}.resume-project-title h3{font-size:21px;line-height:1.65;letter-spacing:-.3px}.resume-project-title>a{width:28px;height:28px;font-size:18px;margin-top:4px}.resume-project-background{font-size:12px;line-height:1.95;margin:14px 0 16px}.resume-project-tags{gap:6px;margin-bottom:20px}.resume-project-tags li{font-size:9px;padding:3px 8px}.resume-output-title{font-size:11px;padding-top:18px;margin-bottom:16px}.resume-deliverables>li{padding-left:26px;margin-bottom:18px}.resume-deliverables>li::before{font-size:9px}.resume-deliverables strong{font-size:12px}.resume-deliverables p{font-size:11px;line-height:2}.resume-project-link{margin:21px 0 0 26px;font-size:10px}.resume-footer{margin-top:0;padding-top:27px;gap:20px}.resume-footer h2{font-size:23px;max-width:250px;line-height:1.6;margin-top:9px}.resume-footer .resume-eyebrow{font-size:8px}.resume-footer-meta{font-size:9px;margin-top:6px;padding-top:18px}}
+@media(max-width:360px){.resume-intro{grid-template-columns:minmax(0,1fr) 75px;column-gap:13px}.resume-identity h1{font-size:48px}.resume-identity h1>span{font-size:35px}.resume-eyebrow{font-size:8px;letter-spacing:.4px}.resume-highlights>div{padding-inline:10px}.resume-highlights strong{font-size:28px}.resume-highlights p{font-size:9px}.resume-highlights small{font-size:8px}.resume-facts dd{font-size:10px}.resume-facts{column-gap:8px}.resume-contact-links strong{font-size:11px}.resume-education,.resume-project{padding-inline:16px}.resume-project-title h3{font-size:19px}.resume-academic strong{font-size:22px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.resume-button{transition:none}.resume-button:hover{transform:none}}
+@media print{.site-header-glass,.skip-link,.resume-toc,.resume-intro-actions,.resume-source-link,.resume-project-title>a,.resume-project-link,.resume-footer{display:none!important}.resume-page{background:#fff;color:#1d2129}.resume-shell{padding:0;max-width:none}.resume-intro{padding-top:0}.resume-intro::before{display:none}.resume-layout{grid-template-columns:1fr}.resume-sidebar{position:static}.resume-contact-card{break-inside:avoid}.resume-contact-links{display:grid;grid-template-columns:1fr 1fr}.resume-facts{grid-template-columns:repeat(6,1fr)}.resume-project,.resume-education,.resume-timeline{break-inside:avoid;background:#fff}.resume-section{scroll-margin-top:0}.resume-highlights{margin-bottom:25px}.resume-project-title h3{font-size:20px}}

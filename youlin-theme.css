@@ -1,0 +1,30 @@
+/* Gray-green counterpart to Shenghang's equally light gray-blue palette. */
+:root {
+  color-scheme: light;
+  --paper: #ecf1eb;
+  --ink: #2d3c30;
+  --muted: #627363;
+  --line: #cfd9ce;
+  --blue: #52795c;
+  --project-surface: #e3eae3;
+  --chapter-muted: #677967;
+  --reading-sticky: #ecf1ebf5;
+  --project-header-bg: #ecf1ebe8;
+  --project-nav-bg: #dce5dc;
+  --project-nav-ink: #667467;
+}
+::selection { background: #ccdfcb; color: var(--ink); }
+.skip-link { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+.case-slide > a { background: var(--project-surface); }
+.project-switch-card:hover { border-color: #96ae98; background: #ffffff60; }
+.image-preview-open { background: var(--paper); }
+.case-image-preview { background: #ecf1eb26; color: var(--ink); }
+.case-image-preview::backdrop { background: #dee7dd99; }
+.preview-toolbar h2, .preview-counter, .preview-loading { color: var(--ink); }
+.preview-toolbar button, .preview-step { color: var(--ink); border-color: #68816a66; background: #ffffff40; }
+.preview-toolbar button:hover, .preview-step:hover:not(:disabled) { background: #ffffffa6; }
+.preview-toolbar button:focus-visible, .preview-step:focus-visible, .project-topbar a:focus-visible { outline-color: var(--blue); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .case-image-preview::backdrop { background: #dee7dde0; }
+  .project-topbar { background: var(--paper); }
+}
