@@ -49,3 +49,45 @@
   else window.addEventListener('load', restoreStageTop, { once: true });
   syncLocation();
 })();
+
+// Keep artwork previews on the current page, with a second click to dismiss.
+(() => {
+  const links = [...document.querySelectorAll('.project-research-artwork > a')];
+  if (!links.length || typeof HTMLDialogElement === 'undefined') return;
+  const preview = document.createElement('dialog');
+  preview.className = 'project-artwork-preview';
+  preview.setAttribute('aria-labelledby', 'project-artwork-preview-title');
+  preview.innerHTML = '<div class="project-artwork-preview-toolbar"><h2 id="project-artwork-preview-title">高清预览 · 再次点击退出</h2><button type="button" aria-label="关闭高清预览" autofocus>×</button></div><div class="project-artwork-preview-stage"><img alt=""></div>';
+  document.body.append(preview);
+  const image = preview.querySelector('img');
+  const title = preview.querySelector('h2');
+  const root = document.documentElement;
+  let opener;
+  let position = { x: 0, y: 0 };
+
+  for (const link of links) {
+    link.setAttribute('aria-haspopup', 'dialog');
+    link.addEventListener('click', event => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      opener = link;
+      position = { x: window.scrollX, y: window.scrollY };
+      const source = link.querySelector('img');
+      image.src = link.href;
+      image.alt = source.alt;
+      title.textContent = (link.closest('#project-research') ? '调研' : '探索') + ' · 高清预览 · 再次点击退出';
+      root.style.setProperty('--project-preview-gutter', Math.max(0, window.innerWidth - root.clientWidth) + 'px');
+      root.classList.add('project-artwork-preview-open');
+      preview.showModal();
+    });
+  }
+  preview.addEventListener('click', () => preview.close());
+  preview.addEventListener('close', () => {
+    root.classList.remove('project-artwork-preview-open');
+    root.style.removeProperty('--project-preview-gutter');
+    image.removeAttribute('src');
+    image.alt = '';
+    window.scrollTo({ left: position.x, top: position.y, behavior: 'instant' });
+    opener?.focus({ preventScroll: true });
+  });
+})();
