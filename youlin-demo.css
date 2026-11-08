@@ -1,0 +1,299 @@
+.youlin-demo {
+  --youlin-ink: #122921;
+  --youlin-green: #087b51;
+  --youlin-muted: #536b61;
+  --youlin-nav-offset: calc(var(--site-header-height) + 24px);
+  --youlin-block-padding: clamp(14px, 2.6dvh, 28px);
+  --youlin-phone-space: calc(100dvh - var(--youlin-nav-offset) - 2 * var(--youlin-block-padding) - 24px);
+  --youlin-text-spacing: clamp(12px, 7dvh, 64px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.24fr);
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas: 'kicker phone' 'intro phone' 'guide phone';
+  column-gap: clamp(18px, 3.3vw, 58px);
+  row-gap: clamp(12px, 2dvh, 22px);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin-bottom: 10px;
+  padding: var(--youlin-block-padding) clamp(30px, 4vw, 76px);
+  background: radial-gradient(ellipse at 18% 85%, #d1f6e4, transparent 58%), linear-gradient(115deg, #f0fbf5 12%, #e7f6f4 59%, #dceefb);
+  color: var(--youlin-ink);
+  cursor: zoom-in;
+}
+.youlin-demo [hidden] { display: none !important; }
+.youlin-demo button, .youlin-demo select, .youlin-demo input { font: inherit; color: inherit; }
+.youlin-demo button { border: 0; cursor: pointer; }
+.youlin-demo :is(button, input, select):focus-visible { outline: 2px solid #145bca; outline-offset: 2px; }
+.youlin-demo-kicker {
+  grid-area: kicker;
+  align-self: start;
+  position: relative;
+  inset-block-start: clamp(8px, 1.5vw, 24px);
+  margin: 40px 0 0;
+  color: #616568;
+  font-family: Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: clamp(10px, 1vw, 14px);
+  font-weight: 400;
+}
+.youlin-demo-kicker span { margin: 0 .22em; }
+.youlin-demo-intro, .youlin-demo-guide { align-self: start; margin-block-start: var(--youlin-text-spacing); }
+.youlin-demo-intro { grid-area: intro; }
+.youlin-demo-label { display: flex; align-items: center; gap: 5px; margin: 0 0 9px; font-size: 13px; font-weight: 750; }
+.youlin-demo-label > span { font-size: 12px; }
+.youlin-demo-intro h2 { margin: 0; font-size: clamp(34px, min(3.7vw, 8dvh), 60px); line-height: 1.19; letter-spacing: -.035em; color: #10201a; }
+.youlin-demo-intro .youlin-demo-title-trigger { display: block; padding: 0; background: none; letter-spacing: inherit; text-align: start; cursor: inherit; }
+.youlin-demo-description, .youlin-demo-guide { width: min(100%, 470px); }
+.youlin-demo-description {
+  margin: 16px 0 0;
+  color: var(--youlin-muted);
+  font-size: clamp(12px, 1.02vw, 15px);
+  line-height: 1.7;
+  text-wrap: balance;
+  text-align: start;
+}
+.youlin-demo-guide { --youlin-scenario-padding-bottom: 3px; grid-area: guide; }
+.youlin-scenarios { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px clamp(24px, 4vw, 56px); margin: 0; padding: 0; list-style: none; }
+.youlin-scenarios li { display: flex; gap: 9px; padding: 9px 0 var(--youlin-scenario-padding-bottom); border-top: 1px solid #b6d1c3; }
+.youlin-scenarios li[aria-current] { border-color: var(--youlin-green); }
+.youlin-scenarios li > span { flex: none; margin-top: 2px; color: var(--youlin-muted); font-size: 13px; font-weight: 700; }
+.youlin-scenarios li[aria-current] :is(span, strong) { color: var(--youlin-green); }
+.youlin-scenarios strong { display: block; font-size: 15px; }
+.youlin-scenarios p { margin: 16px 0 0; color: var(--youlin-muted); font-size: 13px; line-height: 1.55; }
+.youlin-demo-tools { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-top: calc(40px - var(--youlin-scenario-padding-bottom)); color: var(--youlin-muted); font-size: 11px; }
+.youlin-demo-tools button { display: inline-flex; align-items: center; gap: 5px; min-height: 38px; padding: 5px 13px; border: 1px solid #a6c7b3; border-radius: 50px; background: #ffffff8c; color: var(--youlin-ink); font-weight: 750; }
+.youlin-demo-tools button:hover { background: #fff; }
+.youlin-demo-tools button span { font-size: 16px; }
+.youlin-demo-stage { grid-area: phone; position: relative; display: grid; place-items: center; align-self: start; min-width: 0; padding: 4px 0; }
+.youlin-demo-stage::before, .youlin-demo-stage::after { content: ''; position: absolute; z-index: -1; pointer-events: none; border-radius: 50%; }
+.youlin-demo-stage::before { inset: 17% -8% 13%; background: radial-gradient(ellipse, #36daa14d, #81d6f028 45%, transparent 71%); }
+.youlin-demo-stage::after { inset: 25% -2% 16%; border: 1px solid #fff9; transform: rotate(-33deg); }
+.youlin-phone {
+  /* Figma iPhone 14 Pro: 437 × 890 outer frame, 394 × 852 display. */
+  position: relative;
+  container-type: inline-size;
+  width: min(100%, 437px, calc(max(180px, var(--youlin-phone-space)) * 437 / 890));
+  aspect-ratio: 437 / 890;
+  cursor: auto;
+}
+.youlin-preview-dialog { padding: 60px clamp(12px, 4vw, 64px) 12px; }
+.youlin-preview-stage {
+  width: min(100%, 1480px);
+  height: 100%;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.youlin-preview-stage .youlin-demo {
+  --youlin-block-padding: 8px;
+  --youlin-phone-space: calc(100dvh - 96px);
+  min-height: 100%;
+  margin: 0;
+  cursor: zoom-out;
+}
+.youlin-preview-stage .youlin-phone { width: min(100%, calc(max(180px, var(--youlin-phone-space)) * 437 / 890)); }
+.youlin-shell {
+  position: absolute;
+  inset: 0 calc(100% * 3 / 437);
+  border-radius: calc(100cqw * 75 / 437);
+  background: #121715;
+  box-shadow: 0 0 0 1px #d2e1df, inset 0 0 0 calc(100cqw * 2 / 437) #7c8986, inset 0 0 0 calc(100cqw * 5 / 437) #b9c4c1, 0 27px 44px #16372d32, 0 5px 10px #152e253d;
+}
+.youlin-phone::before, .youlin-phone::after {
+  content: '';
+  position: absolute;
+  width: calc(100cqw * 3 / 437);
+  border-radius: 2px;
+}
+.youlin-phone::before {
+  left: 0;
+  top: calc(100% * 171 / 890);
+  height: calc(100% * 217 / 890);
+  background: linear-gradient(to bottom,
+    #687571 0 calc(100% * 33 / 217), transparent 0 calc(100% * 64 / 217),
+    #687571 0 calc(100% * 132 / 217), transparent 0 calc(100% * 149 / 217), #687571 0);
+}
+.youlin-phone::after {
+  right: 0;
+  top: calc(100% * 282 / 890);
+  height: calc(100% * 107 / 890);
+  background: #687571;
+}
+
+.youlin-device {
+  position: absolute;
+  inset: calc(100% * 19 / 890) calc(100% * 21.5 / 437);
+  overflow: hidden;
+  border-radius: calc(100cqw * 56 / 437);
+  background: #f7f7f7;
+  color: #242c28;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.youlin-board, .youlin-screen-layer, .youlin-controls, .youlin-screen-layer > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.youlin-screen-layer > img { display: block; user-select: none; }
+.youlin-screen-layer[inert] { pointer-events: none; }
+.youlin-island {
+  position: absolute;
+  z-index: 1;
+  top: calc(100cqw * 13 / 437);
+  left: 50%;
+  width: calc(100cqw * 111 / 437);
+  height: calc(100cqw * 32 / 437);
+  transform: translateX(-50%);
+  border-radius: 30px;
+  background: #060807;
+  pointer-events: none;
+}
+.youlin-island::after {
+  content: '';
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  width: 12%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 64% 39%, #4a5784, #0c1020 49%, #121514 68%);
+}
+.youlin-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.youlin-spot {
+  position: absolute;
+  left: var(--spot-x);
+  top: var(--spot-y);
+  width: var(--spot-width);
+  height: var(--spot-height);
+}
+button.youlin-hit {
+  padding: 0;
+  border-radius: 7px;
+  background: transparent;
+  touch-action: manipulation;
+}
+.youlin-icon-bounce {
+  background-repeat: no-repeat;
+  mask-image: radial-gradient(circle, #000 56%, transparent 73%);
+  pointer-events: none;
+}
+.youlin-tabbar {
+  position: absolute;
+  z-index: 1;
+  inset: auto 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  height: calc(100% * 82 / 844);
+  border-top: 1px solid #ebebeb;
+  background: #fff;
+}
+.youlin-tabbar .youlin-hit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(100cqw * 2 / 437);
+  padding: calc(100cqw * 4 / 437) 0 0;
+  border-radius: 0;
+  color: #252525;
+  font-size: clamp(7px, calc(100cqw * 10.5 / 437), 10.5px);
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.youlin-tabbar .youlin-hit[aria-current] { color: var(--youlin-green); }
+.youlin-tabbar .youlin-hit:focus-visible { outline-offset: -3px; }
+.youlin-tab-icon {
+  flex: none;
+  width: calc(100cqw * 32 / 437);
+  aspect-ratio: 1;
+  background: url('assets/youlin/demo/tab-icons-3x.webp') var(--youlin-tab-column) 0 / 400% 200% no-repeat;
+}
+.youlin-tabbar [aria-current] .youlin-tab-icon { background-position-y: 100%; }
+.youlin-controls :is(button, input, select):focus-visible { outline-offset: -2px; }
+.youlin-controls :is(input, select) {
+  min-width: 0;
+  padding: 0 min(10px, 2cqw);
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: transparent;
+  font-size: max(12px, calc(100cqw * 14 / 437));
+}
+.youlin-controls input::placeholder { color: transparent; }
+.youlin-controls input:is(:focus, .is-edited) { background: #f1f2f3; color: #25302b; }
+.youlin-controls input:is(:focus, .is-edited)::placeholder { color: #627069; }
+.youlin-controls select { appearance: none; cursor: pointer; }
+.youlin-controls select option { color: #25302b; background: #fff; }
+.youlin-controls select.is-edited { color: #25302b; background: #f7f7f7; }
+.youlin-controls .youlin-account-error {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #fff;
+  color: #a81829;
+  font-size: max(10px, calc(100cqw * 12 / 437));
+}
+.youlin-controls .youlin-query-form { display: contents; }
+.youlin-record-scroll { overflow-y: auto; overscroll-behavior-y: contain; scrollbar-width: none; background: #f7f7f7; }
+.youlin-record-row { position: relative; width: 100%; aspect-ratio: 390 / 206; }
+.youlin-record-row img { display: block; width: 100%; height: 100%; }
+.youlin-record-row .youlin-hit { position: absolute; left: 67%; top: 69%; width: 28%; height: 22%; }
+.youlin-record-empty { margin: 12px; padding: 24px 10px; border-radius: 9px; background: #fff; text-align: center; color: var(--youlin-muted); }
+.youlin-tab-cover { background: #fff; pointer-events: none; }
+.youlin-tab-active { border-radius: 10px; background: #10c77a; pointer-events: none; }
+.youlin-controls .youlin-broadband-selected {
+  border-radius: 0;
+  background: #fff;
+  color: #087b51;
+  font-size: max(10px, calc(100cqw * 13 / 437));
+  font-weight: 750;
+}
+.youlin-overlay { position: absolute; z-index: 2; inset: 0; display: flex; align-items: end; background: #0e24237d; }
+.youlin-sheet { display: flex; flex-direction: column; width: 100%; max-height: 84%; min-height: 34%; padding-bottom: 17px; overflow: hidden; border-radius: 13px 13px 0 0; background: #fff; }
+.youlin-sheet header { position: relative; display: grid; flex: none; place-items: center; min-height: 44px; padding: 6px 34px; background: #d3faea; color: #086442; }
+.youlin-sheet header h4 { margin: 0; font-size: 16px; }
+.youlin-sheet header button { position: absolute; inset: 3px 3px 3px auto; width: 36px; border-radius: 8px; background: transparent; font-size: 23px; }
+.youlin-sheet header button:hover { background: #087b5115; }
+.youlin-sheet-body { flex: 1; min-height: 0; overflow-y: auto; padding: 16px; }
+.youlin-sheet-body > p { margin: 2px 0 12px; color: var(--youlin-muted); }
+.youlin-sheet-body dl { margin: 0 0 14px; }
+.youlin-sheet-body dl div { display: flex; justify-content: space-between; gap: 8px; padding: 8px 0; border-bottom: 1px solid #edf2ef; }
+.youlin-sheet-body dt { flex: none; color: var(--youlin-muted); }
+.youlin-sheet-body dd { margin: 0; text-align: right; }
+@media (max-width: 1100px) and (min-width: 901px) {
+  .youlin-demo { padding-inline: 21px; column-gap: 12px; }
+}
+@media (max-width: 900px) {
+  .youlin-demo { --youlin-nav-offset: calc(var(--site-header-height) + 55px); }
+}
+@media (max-width: 680px) {
+  .youlin-demo {
+    --youlin-block-padding: 16px;
+    --youlin-phone-space: calc(100dvh - var(--youlin-nav-offset) - var(--youlin-block-padding) - 114px);
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 'kicker' 'label' 'intro' 'description' 'phone' 'guide';
+    gap: 0;
+    padding-inline: clamp(12px, 5vw, 28px);
+  }
+  .youlin-demo-intro { display: contents; }
+  .youlin-demo-kicker { inset-block-start: auto; margin-block: 8px; }
+  .youlin-demo-label { grid-area: label; margin-bottom: 5px; }
+  .youlin-demo-intro h2 { grid-area: intro; }
+  .youlin-demo-stage { margin-top: 12px; }
+  .youlin-demo-description { grid-area: description; margin-top: 14px; font-size: clamp(11px, 3.4vw, 12px); }
+  .youlin-demo-guide { margin-top: 20px; }
+  .youlin-preview-stage .youlin-demo { --youlin-phone-space: calc(100dvh - 200px); }
+}

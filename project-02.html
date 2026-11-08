@@ -9,25 +9,28 @@
   <link rel="stylesheet" href="project-reading.css">
   <link rel="stylesheet" href="project-navigation.css">
   <link rel="stylesheet" href="youlin-theme.css">
+  <link rel="stylesheet" href="youlin-demo.css">
   <script src="shenghang.js" defer></script>
+  <script src="youlin-demo.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#project-content">跳到作品集内容</a>
   <header class="project-topbar" aria-label="项目导航">
     <a class="project-title-link" href="./#work" aria-label="返回设计项目：友邻 APP 2.0"><span aria-hidden="true">←</span><span>友邻 APP 2.0</span></a>
-    <nav class="project-section-nav" aria-label="项目章节分组"><a class="project-section-link" href="#overview" data-chapters="overview goals" aria-current="location">项目总览</a><a class="project-section-link" href="#visual-design" data-chapters="visual-design design-standards">视觉规范</a><a class="project-section-link" href="#main-screens" data-chapters="main-screens payments">核心界面</a><a class="project-section-link" href="#community-services" data-chapters="community-services more-scenarios">服务场景</a></nav>
+    <nav class="project-section-nav" aria-label="项目章节分组"><a class="project-section-link" href="#overview" data-chapters="overview prototype-demo goals" aria-current="location">项目总览</a><a class="project-section-link" href="#visual-design" data-chapters="visual-design design-standards">视觉规范</a><a class="project-section-link" href="#main-screens" data-chapters="main-screens payments">核心界面</a><a class="project-section-link" href="#community-services" data-chapters="community-services more-scenarios">服务场景</a></nav>
     <nav class="project-page-nav" aria-label="切换作品"><a class="project-page-link" href="shenghang.html">项目一</a><a class="project-page-link" href="project-02.html" aria-current="page">项目二</a><a class="project-page-link" href="project-03.html">项目三</a></nav>
   </header>
   <aside class="project-sidebar" aria-label="项目目录">
     <nav class="chapter-nav" aria-label="作品集章节">
       <a href="#overview" aria-current="location"><span class="chapter-number">01</span><span>项目概览</span><span class="chapter-range">01</span></a>
-      <a href="#goals"><span class="chapter-number">02</span><span>目标与方向</span><span class="chapter-range">02</span></a>
-      <a href="#visual-design"><span class="chapter-number">03</span><span>视觉设计</span><span class="chapter-range">03</span></a>
-      <a href="#design-standards"><span class="chapter-number">04</span><span>页面规范</span><span class="chapter-range">04</span></a>
-      <a href="#main-screens"><span class="chapter-number">05</span><span>主要界面</span><span class="chapter-range">05</span></a>
-      <a href="#payments"><span class="chapter-number">06</span><span>生活缴费</span><span class="chapter-range">06</span></a>
-      <a href="#community-services"><span class="chapter-number">07</span><span>社区服务</span><span class="chapter-range">07</span></a>
-      <a href="#more-scenarios"><span class="chapter-number">08</span><span>更多场景</span><span class="chapter-range">08</span></a>
+      <a href="#prototype-demo"><span class="chapter-number">02</span><span>原型 Demo</span></a>
+      <a href="#goals"><span class="chapter-number">03</span><span>目标与方向</span><span class="chapter-range">02</span></a>
+      <a href="#visual-design"><span class="chapter-number">04</span><span>视觉设计</span><span class="chapter-range">03</span></a>
+      <a href="#design-standards"><span class="chapter-number">05</span><span>页面规范</span><span class="chapter-range">04</span></a>
+      <a href="#main-screens"><span class="chapter-number">06</span><span>主要界面</span><span class="chapter-range">05</span></a>
+      <a href="#payments"><span class="chapter-number">07</span><span>生活缴费</span><span class="chapter-range">06</span></a>
+      <a href="#community-services"><span class="chapter-number">08</span><span>社区服务</span><span class="chapter-range">07</span></a>
+      <a href="#more-scenarios"><span class="chapter-number">09</span><span>更多场景</span><span class="chapter-range">08</span></a>
     </nav>
   </aside>
   <main id="project-content" tabindex="-1">
@@ -39,50 +42,95 @@
         <figcaption><span>01 / 08</span><a href="assets/youlin/01-3840.webp" target="_blank" rel="noopener" aria-haspopup="dialog" aria-label="高清查看第 01 页（页面内放大）">查看高清图 <span aria-hidden="true">↗</span></a></figcaption>
       </figure>
     </section>
+    <section class="case-chapter" id="prototype-demo" aria-labelledby="youlin-demo-title">
+      <div class="youlin-demo">
+        <p class="youlin-demo-kicker">UI/UX PORTFOLIO <span aria-hidden="true">|</span> 友邻APP</p>
+        <div class="youlin-demo-intro">
+          <p class="youlin-demo-label">项目Demo体验 <span aria-hidden="true">▸</span></p>
+          <h2 id="youlin-demo-title"><button type="button" class="youlin-demo-title-trigger" aria-haspopup="dialog" aria-controls="youlin-demo-preview">友邻 APP 2.0</button></h2>
+          <p class="youlin-demo-description">友邻 APP 2.0 将便民办事、邻里交流和社区服务汇集在一起。点击手机界面，探索居民常用的功能与场景。</p>
+          <noscript><p>开启 JavaScript 后可体验互动原型。</p></noscript>
+        </div>
+
+        <div class="youlin-demo-stage" aria-label="友邻手机原型">
+          <div class="youlin-phone">
+            <span class="youlin-shell" aria-hidden="true"></span>
+            <div class="youlin-device" data-screen="home">
+              <div class="youlin-board" aria-labelledby="youlin-screen-title">
+                <h3 class="youlin-sr-only" id="youlin-screen-title" tabindex="-1">首页</h3>
+                <div class="youlin-screen-layer">
+                  <img class="youlin-artwork" src="assets/youlin/demo/board-home-3x.webp" alt="" width="390" height="844" draggable="false">
+                  <div class="youlin-controls"></div>
+                </div>
+                <nav class="youlin-tabbar" aria-label="样机底部导航" hidden></nav>
+              </div>
+              <span class="youlin-island" aria-hidden="true"></span>
+              <div class="youlin-overlay" hidden>
+                <section class="youlin-sheet" role="dialog" aria-modal="true" aria-labelledby="youlin-sheet-title">
+                  <header><h4 id="youlin-sheet-title"></h4><button type="button" data-demo-close aria-label="关闭弹层">×</button></header>
+                  <div class="youlin-sheet-body"></div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="youlin-demo-guide">
+          <ul class="youlin-scenarios" aria-label="体验场景">
+            <li data-scenario="main" aria-current="true"><span aria-hidden="true">01</span><div><strong>主要界面</strong><p>从首页找服务，逛人民广场，也可以切换到「我的」。</p></div></li>
+            <li data-scenario="payments"><span aria-hidden="true">02</span><div><strong>生活缴费</strong><p>查询电费、核对账单并模拟缴费，再筛选记录、查看详情。</p></div></li>
+            <li data-scenario="community"><span aria-hidden="true">03</span><div><strong>社区服务</strong><p>查看失物招领线索，浏览家政服务和预约入口。</p></div></li>
+            <li data-scenario="more"><span aria-hidden="true">04</span><div><strong>更多场景</strong><p>体验签到、逛积分商城，或在智慧停车查看车辆位置。</p></div></li>
+          </ul>
+          <div class="youlin-demo-tools">
+            <button type="button" data-demo-reset><span aria-hidden="true">↻</span> 重置体验</button>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="case-chapter" id="goals" aria-labelledby="goals-title">
-      <div class="chapter-heading"><h2 id="goals-title"><span>02</span> 目标与方向</h2><span>PAGE 02</span></div>
+      <div class="chapter-heading"><h2 id="goals-title"><span>03</span> 目标与方向</h2><span>PAGE 02</span></div>
       <figure class="case-slide">
         <a href="assets/youlin/02-3840.webp" target="_blank" rel="noopener" aria-haspopup="dialog" aria-label="高清查看第 02 页：结合业务目标明确设计方向（页面内放大）"><img src="assets/youlin/02-1920.webp" srcset="assets/youlin/02-1920.webp 1920w, assets/youlin/02-3840.webp 3840w" sizes="(max-width: 800px) 100vw, calc(100vw - 320px)" width="3840" height="2160" alt="结合业务目标明确设计方向" loading="lazy" decoding="async"></a>
         <figcaption><span>02 / 08</span><a href="assets/youlin/02-3840.webp" target="_blank" rel="noopener" aria-haspopup="dialog" aria-label="高清查看第 02 页（页面内放大）">查看高清图 <span aria-hidden="true">↗</span></a></figcaption>
       </figure>
     </section>
     <section class="case-chapter" id="visual-design" aria-labelledby="visual-design-title">
-      <div class="chapter-heading"><h2 id="visual-design-title"><span>03</span> 视觉设计</h2><span>PAGE 03</span></div>
+      <div class="chapter-heading"><h2 id="visual-design-title"><span>04</span> 视觉设计</h2><span>PAGE 03</span></div>
       <figure class="case-slide">
         <a href="assets/youlin/03-3840.webp" target="_blank" rel="noopener" aria-haspopup="dialog" aria-label="高清查看第 03 页：目标导向的视觉设计：情绪、颜色与图标（页面内放大）"><img src="assets/youlin/03-1920.webp" srcset="assets/youlin/03-1920.webp 1920w, assets/youlin/03-3840.webp 3840w" sizes="(max-width: 800px) 100vw, calc(100vw - 320px)" width="3840" height="2160" alt="目标导向的视觉设计：情绪、颜色与图标" loading="lazy" decoding="async"></a>
         <figcaption><span>03 / 08</span><a href="assets/youlin/03-3840.webp" target="_blank" rel="noopener" aria-haspopup="dialog" aria-label="高清查看第 03 页（页面内放大）">查看高清图 <span aria-hidden="true">↗</span></a></figcaption>
       </figure>
     </section>
     <section class="case-chapter" id="design-standards" aria-labelledby="design-standards-title">
-      <div class="chapter-heading"><h2 id="design-standards-title"><span>04</span> 页面规范</h2><span>PAGE 04</span></div>
+      <div class="chapter-heading"><h2 id="design-standards-title"><span>05</span> 页面规范</h2><span>PAGE 04</span></div>
       <figure class="case-slide">
         <a href="assets/youlin/04-3840.webp" target="_blank" rel="noopener" aria-haspopup="dialog" aria-label="高清查看第 04 页：规范化页面布局与设计规范（页面内放大）"><img src="assets/youlin/04-1920.webp" srcset="assets/youlin/04-1920.webp 1920w, assets/youlin/04-3840.webp 3840w" sizes="(max-width: 800px) 100vw, calc(100vw - 320px)" width="3840" height="2160" alt="规范化页面布局与设计规范" loading="lazy" decoding="async"></a>
         <figcaption><span>04 / 08</span><a href="assets/youlin/04-3840.webp" target="_blank" rel="noopener" aria-haspopup="dialog" aria-label="高清查看第 04 页（页面内放大）">查看高清图 <span aria-hidden="true">↗</span></a></figcaption>
       </figure>
     </section>
     <section class="case-chapter" id="main-screens" aria-labelledby="main-screens-title">
-      <div class="chapter-heading"><h2 id="main-screens-title"><span>05</span> 主要界面</h2><span>PAGE 05</span></div>
+      <div class="chapter-heading"><h2 id="main-screens-title"><span>06</span> 主要界面</h2><span>PAGE 05</span></div>
       <figure class="case-slide">
         <a href="assets/youlin/05-3840.webp" target="_blank" rel="noopener" aria-haspopup="dialog" aria-label="高清查看第 05 页：首页、发现页与个人中心等主要界面展示（页面内放大）"><img src="assets/youlin/05-1920.webp" srcset="assets/youlin/05-1920.webp 1920w, assets/youlin/05-3840.webp 3840w" sizes="(max-width: 800px) 100vw, calc(100vw - 320px)" width="3840" height="2160" alt="首页、发现页与个人中心等主要界面展示" loading="lazy" decoding="async"></a>
         <figcaption><span>05 / 08</span><a href="assets/youlin/05-3840.webp" target="_blank" rel="noopener" aria-haspopup="dialog" aria-label="高清查看第 05 页（页面内放大）">查看高清图 <span aria-hidden="true">↗</span></a></figcaption>
       </figure>
     </section>
     <section class="case-chapter" id="payments" aria-labelledby="payments-title">
-      <div class="chapter-heading"><h2 id="payments-title"><span>06</span> 生活缴费</h2><span>PAGE 06</span></div>
+      <div class="chapter-heading"><h2 id="payments-title"><span>07</span> 生活缴费</h2><span>PAGE 06</span></div>
       <figure class="case-slide">
         <a href="assets/youlin/06-3840.webp" target="_blank" rel="noopener" aria-haspopup="dialog" aria-label="高清查看第 06 页：生活缴费流程：缴费前、缴费中与缴费后（页面内放大）"><img src="assets/youlin/06-1920.webp" srcset="assets/youlin/06-1920.webp 1920w, assets/youlin/06-3840.webp 3840w" sizes="(max-width: 800px) 100vw, calc(100vw - 320px)" width="3840" height="2160" alt="生活缴费流程：缴费前、缴费中与缴费后" loading="lazy" decoding="async"></a>
         <figcaption><span>06 / 08</span><a href="assets/youlin/06-3840.webp" target="_blank" rel="noopener" aria-haspopup="dialog" aria-label="高清查看第 06 页（页面内放大）">查看高清图 <span aria-hidden="true">↗</span></a></figcaption>
       </figure>
     </section>
     <section class="case-chapter" id="community-services" aria-labelledby="community-services-title">
-      <div class="chapter-heading"><h2 id="community-services-title"><span>07</span> 社区服务</h2><span>PAGE 07</span></div>
+      <div class="chapter-heading"><h2 id="community-services-title"><span>08</span> 社区服务</h2><span>PAGE 07</span></div>
       <figure class="case-slide">
         <a href="assets/youlin/07-3840.webp" target="_blank" rel="noopener" aria-haspopup="dialog" aria-label="高清查看第 07 页：失物招领与家政服务界面设计（页面内放大）"><img src="assets/youlin/07-1920.webp" srcset="assets/youlin/07-1920.webp 1920w, assets/youlin/07-3840.webp 3840w" sizes="(max-width: 800px) 100vw, calc(100vw - 320px)" width="3840" height="2160" alt="失物招领与家政服务界面设计" loading="lazy" decoding="async"></a>
         <figcaption><span>07 / 08</span><a href="assets/youlin/07-3840.webp" target="_blank" rel="noopener" aria-haspopup="dialog" aria-label="高清查看第 07 页（页面内放大）">查看高清图 <span aria-hidden="true">↗</span></a></figcaption>
       </figure>
     </section>
     <section class="case-chapter" id="more-scenarios" aria-labelledby="more-scenarios-title">
-      <div class="chapter-heading"><h2 id="more-scenarios-title"><span>08</span> 更多场景</h2><span>PAGE 08</span></div>
+      <div class="chapter-heading"><h2 id="more-scenarios-title"><span>09</span> 更多场景</h2><span>PAGE 08</span></div>
       <figure class="case-slide">
         <a href="assets/youlin/08-3840.webp" target="_blank" rel="noopener" aria-haspopup="dialog" aria-label="高清查看第 08 页：社区活动、积分商城、生活缴费与智慧停车界面（页面内放大）"><img src="assets/youlin/08-1920.webp" srcset="assets/youlin/08-1920.webp 1920w, assets/youlin/08-3840.webp 3840w" sizes="(max-width: 800px) 100vw, calc(100vw - 320px)" width="3840" height="2160" alt="社区活动、积分商城、生活缴费与智慧停车界面" loading="lazy" decoding="async"></a>
         <figcaption><span>08 / 08</span><a href="assets/youlin/08-3840.webp" target="_blank" rel="noopener" aria-haspopup="dialog" aria-label="高清查看第 08 页（页面内放大）">查看高清图 <span aria-hidden="true">↗</span></a></figcaption>
@@ -96,5 +144,12 @@
       </nav>
     </footer>
   </main>
+  <dialog class="case-image-preview youlin-preview-dialog" id="youlin-demo-preview" aria-labelledby="youlin-preview-title">
+    <div class="preview-toolbar">
+      <h2 id="youlin-preview-title">原型 Demo · 放大预览</h2>
+      <button type="button" class="preview-close" aria-label="关闭放大预览" autofocus>×</button>
+    </div>
+    <div class="youlin-preview-stage"></div>
+  </dialog>
 </body>
 </html>
