@@ -19,12 +19,20 @@
 .case-slide figcaption { display: none; }
 .project-switch-card { border-radius: 4px; background: transparent; }
 .switch-title { font-size: 21px; }
-@media (max-width: 800px) {
-  html { scroll-padding-top: calc(var(--site-header-height) + 80px); }
-  .project-sidebar { top: var(--site-header-height); transform: none; padding: 14px 18px 0; background: var(--reading-sticky, #ecf0f4f5); border-bottom: 1px solid var(--line); }
-  .chapter-nav { gap: 14px; margin-top: 0; }
-  .chapter-nav a { padding: 9px 0; gap: 6px; font-size: 11px; }
-  .chapter-nav .chapter-number { flex-basis: auto; font-size: 10px; }
-  .chapter-nav a:hover, .chapter-nav a:focus-visible, .chapter-nav a[aria-current] { transform: translateX(4px); }
+.preview-toolbar .mobile-preview-zoom { display: none; }
+@media (max-width: 900px) {
+  html { scroll-padding-top: calc(var(--site-header-height) + 55px); }
+  .project-sidebar { top: var(--site-header-height); transform: none; padding: 0; background: var(--reading-sticky, #ecf0f4f5); border-bottom: 1px solid var(--line); }
+  .chapter-nav { gap: 4px; margin: 0; padding: 0 12px; scroll-padding-inline: 12px; overscroll-behavior-inline: contain; }
+  .chapter-nav a { padding: 0 8px; gap: 6px; font-size: 13px; min-height: 44px; white-space: nowrap; }
+  .chapter-nav .chapter-number { flex-basis: auto; font-size: 11px; }
+  .chapter-nav a:hover, .chapter-nav a:focus-visible, .chapter-nav a[aria-current] { transform: none; }
+  .chapter-nav a[aria-current] { box-shadow: inset 0 -2px var(--blue); }
+  main { padding: 14px 12px 0; }
+  .preview-toolbar { gap: 8px; }
+  .preview-toolbar .preview-close { width: 44px; height: 44px; flex: none; }
+  .preview-toolbar .mobile-preview-zoom:not([hidden]) { display: inline-flex; align-items: center; width: auto; height: 44px; padding-inline: 12px; font: inherit; font-size: 12px; white-space: nowrap; }
+  .case-image-preview.is-zoomed .preview-stage { display: flex; align-items: flex-start; justify-content: flex-start; overflow: auto; overscroll-behavior: contain; cursor: auto; }
+  .case-image-preview.is-zoomed .preview-stage > .preview-artwork { flex: none; width: 1920px !important; max-width: none; max-height: none; cursor: auto; }
 }
 @media (prefers-reduced-motion: reduce) { .chapter-nav a { transition: none; } }

@@ -117,3 +117,12 @@
 @media(max-width:360px){.resume-intro{grid-template-columns:minmax(0,1fr) 75px;column-gap:13px}.resume-identity h1{font-size:48px}.resume-identity h1>span{font-size:35px}.resume-eyebrow{font-size:8px;letter-spacing:.4px}.resume-highlights>div{padding-inline:10px}.resume-highlights strong{font-size:28px}.resume-highlights p{font-size:9px}.resume-highlights small{font-size:8px}.resume-facts dd{font-size:10px}.resume-facts{column-gap:8px}.resume-contact-links strong{font-size:11px}.resume-education,.resume-project{padding-inline:16px}.resume-project-title h3{font-size:19px}.resume-academic strong{font-size:22px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.resume-button{transition:none}.resume-button:hover{transform:none}}
 @media print{.site-header-glass,.skip-link,.resume-toc,.resume-intro-actions,.resume-source-link,.resume-project-title>a,.resume-project-link,.resume-footer{display:none!important}.resume-page{background:#fff;color:#1d2129}.resume-shell{padding:0;max-width:none}.resume-intro{padding-top:0}.resume-intro::before{display:none}.resume-layout{grid-template-columns:1fr}.resume-sidebar{position:static}.resume-contact-card{break-inside:avoid}.resume-contact-links{display:grid;grid-template-columns:1fr 1fr}.resume-facts{grid-template-columns:repeat(6,1fr)}.resume-project,.resume-education,.resume-timeline{break-inside:avoid;background:#fff}.resume-section{scroll-margin-top:0}.resume-highlights{margin-bottom:25px}.resume-project-title h3{font-size:20px}}
+@media screen and (max-width:650px) {
+  .resume-summary, .resume-project-background, .resume-deliverables p { font-size:14px; line-height:1.8; }
+  .resume-deliverables strong { font-size:14px; }
+  .resume-intro-actions { gap:16px; }
+  .resume-button, .resume-text-link, .resume-project-link { display:inline-flex; align-items:center; min-height:44px; font-size:13px; }
+  .resume-project-title > a { width:44px; height:44px; margin-top:0; }
+  .resume-highlights p, .resume-project-tags li { font-size:11px; }
+  .resume-highlights small { font-size:10px; }
+}

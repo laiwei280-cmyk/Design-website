@@ -28,14 +28,12 @@
   .site-header .header-contact { font-size: 10px; }
 }
 @media (max-width: 600px) {
-  :root { --site-header-height: 104px; }
-  .site-header { height: auto; min-height: var(--site-header-height); flex-wrap: wrap; gap: 4px 15px; padding: 14px 7% 8px; }
-  .site-header .brand { width: 100%; font-size: 10px; }
-  .brand-avatar { width: 32px; height: 32px; }
-  .site-header nav { margin-left: 0; gap: 24px; height: auto; }
-  .site-header .nav-link { white-space: nowrap; }
-  .site-header .nav-link::after { bottom: -8px; }
-  .site-header .header-contact { display: none; }
+  :root { --site-header-height: 94px; }
+  .site-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: 50px 44px; gap: 0 10px; padding: 0 5%; }
+  .site-header .brand { gap: 8px; font-size: 10px; letter-spacing: .3px; }
+  .brand-avatar { width: 30px; height: 30px; }
+  .site-header nav { grid-column: 1 / -1; grid-row: 2; margin: 0; gap: 0; }
+  .site-header .nav-link { justify-content: center; flex: 1; padding: 0 4px; font-size: 13px; white-space: nowrap; }
+  .site-header .header-contact { grid-column: 2; grid-row: 1; width: auto; height: 44px; padding: 0 10px; font-size: 12px; gap: 5px; white-space: nowrap; }
 }
-@media (max-width: 360px) { .site-header .nav-link { font-size: 9px; } }
 @media (prefers-reduced-motion: reduce) { .site-header .header-contact { transition: none; } }

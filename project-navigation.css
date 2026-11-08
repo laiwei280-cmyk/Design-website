@@ -30,25 +30,23 @@
 .project-section-link:hover, .project-page-link:hover { color: #15191e; background: #ffffff80; }
 .project-section-link[aria-current], .project-page-link[aria-current] { background: #171a1d; color: #fff; box-shadow: 0 2px 8px #151a2426; }
 .project-topbar a:focus-visible { outline: 2px solid #5166ef; outline-offset: 3px; }
-@media (min-width: 801px) and (max-width: 1150px) {
+@media (min-width: 701px) and (max-width: 1150px) {
   .project-topbar { gap: 12px; padding-inline: 14px; }
   .project-title-link { gap: 9px; font-size: 14px; }
   .project-section-link, .project-page-link { padding-inline: 10px; font-size: 11px; }
 }
-@media (max-width: 800px) {
-  :root { --site-header-height: 128px; }
-  .project-topbar { top: 8px; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; margin: 8px 10px; padding: 12px; border-radius: 18px; }
-  .project-title-link { font-size: 13px; gap: 8px; }
+@media (max-width: 700px) {
+  :root { --site-header-height: 108px; }
+  .project-topbar { top: 6px; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 8px; margin: 6px 8px; padding: 6px 8px; border-radius: 14px; }
+  .project-title-link { font-size: 13px; gap: 6px; min-height: 38px; }
   .project-title-link > span:first-child { font-size: 15px; }
   .project-page-nav { grid-column: 2; grid-row: 1; padding: 3px; gap: 0; border-radius: 12px; }
-  .project-page-link { padding: 8px; font-size: 10px; border-radius: 9px; }
-  .project-section-nav { grid-column: 1 / -1; grid-row: 2; justify-content: center; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 4px; }
-  .project-section-link { padding: 9px 12px; font-size: 11px; }
+  .project-page-link { padding: 8px 6px; font-size: 11px; border-radius: 9px; }
+  .project-section-nav { grid-column: 1 / -1; grid-row: 2; justify-content: center; max-width: 100%; padding: 3px; }
+  .project-section-link { flex: 1; padding: 10px 4px; font-size: 13px; text-align: center; }
 }
 @media (max-width: 360px) {
-  .project-title-link { font-size: 11px; gap: 5px; }
-  .project-page-link { padding-inline: 6px; font-size: 9px; }
-  .project-section-link { padding-inline: 9px; font-size: 10px; }
+  .project-title-link { font-size: 12px; gap: 5px; }
 }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .project-topbar { background: #ecf0f4; } }
 @media (prefers-reduced-motion: reduce) { .project-topbar a { transition: none; } }

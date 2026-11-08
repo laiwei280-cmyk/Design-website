@@ -1,5 +1,6 @@
 // Native fragment links work without JavaScript. Enhance them with reading state.
 const chapterLinks = [...document.querySelectorAll('.chapter-nav a')];
+const chapterNav = document.querySelector('.chapter-nav');
 const chapters = chapterLinks.map(link => document.getElementById(link.hash.slice(1)));
 const sectionGroupLinks = [...document.querySelectorAll('.project-section-link[data-chapters]')];
 let scheduled = false;
@@ -12,6 +13,15 @@ function updateChapter() {
   });
   // The final chapter may be shorter than the viewport.
   if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 3) active = chapters.length - 1;
+  const activeLink = chapterLinks[active];
+  if (activeLink && !activeLink.hasAttribute('aria-current') && chapterNav.scrollWidth > chapterNav.clientWidth) {
+    const navBounds = chapterNav.getBoundingClientRect();
+    const linkBounds = activeLink.getBoundingClientRect();
+    const padding = 12;
+    if (linkBounds.left < navBounds.left + padding || linkBounds.right > navBounds.right - padding) {
+      chapterNav.scrollLeft += linkBounds.left - navBounds.left - padding;
+    }
+  }
   chapterLinks.forEach((link, index) => {
     if (index === active) link.setAttribute('aria-current', 'location');
     else link.removeAttribute('aria-current');
@@ -35,11 +45,14 @@ updateChapter();
 const preview = document.createElement('dialog');
 preview.className = 'case-image-preview';
 preview.setAttribute('aria-labelledby', 'image-preview-title');
-preview.innerHTML = '<div class="preview-toolbar"><h2 id="image-preview-title">高清预览 · 点击画面退出</h2><span class="preview-counter" role="status" aria-live="polite" aria-atomic="true"></span><button class="preview-close" type="button" aria-label="关闭高清预览" autofocus>×</button></div><button class="preview-step preview-prev" type="button" aria-label="上一张图片"><span aria-hidden="true">‹</span></button><div class="preview-stage" aria-busy="false"><img class="preview-artwork" alt=""></div><span class="preview-loading" role="status" hidden>作品加载中…</span><button class="preview-step preview-next" type="button" aria-label="下一张图片"><span aria-hidden="true">›</span></button>';
+preview.innerHTML = '<div class="preview-toolbar"><h2 id="image-preview-title">高清预览 · 点击画面退出</h2><span class="preview-counter" role="status" aria-live="polite" aria-atomic="true"></span><button class="mobile-preview-zoom" type="button" hidden>放大阅读</button><button class="preview-close" type="button" aria-label="关闭高清预览" autofocus>×</button></div><button class="preview-step preview-prev" type="button" aria-label="上一张图片"><span aria-hidden="true">‹</span></button><div class="preview-stage" aria-busy="false"><img class="preview-artwork" alt=""></div><span class="preview-loading" role="status" hidden>作品加载中…</span><button class="preview-step preview-next" type="button" aria-label="下一张图片"><span aria-hidden="true">›</span></button>';
 document.body.append(preview);
 const previewStage = preview.querySelector('.preview-stage');
 let previewImage = preview.querySelector('.preview-artwork');
 const previewCounter = preview.querySelector('.preview-counter');
+const previewTitle = preview.querySelector('h2');
+const previewZoom = preview.querySelector('.mobile-preview-zoom');
+const mobilePreview = matchMedia('(max-width: 900px)');
 const previousButton = preview.querySelector('.preview-prev');
 const nextButton = preview.querySelector('.preview-next');
 const previewLoading = preview.querySelector('.preview-loading');
@@ -52,6 +65,13 @@ let previewRequest = 0;
 let slideAnimations = [];
 let outgoingPreviewImage = null;
 let previewOpener;
+
+function setPreviewZoom(zoomed) {
+  preview.classList.toggle('is-zoomed', zoomed);
+  previewZoom.textContent = zoomed ? '适应屏幕' : '放大阅读';
+  previewTitle.textContent = zoomed ? '滑动查看细节' : '高清预览';
+  previewStage.scrollTo({ left: 0, top: 0, behavior: 'instant' });
+}
 
 function unmountInteractive(node) {
   window.CrewPortfolio?.unmount(node);
@@ -80,6 +100,8 @@ async function showPreviewSlide(index, animate = true) {
   if (index < 0 || index >= previewSlides.length) return;
   const request = ++previewRequest;
   previewIndex = index;
+  setPreviewZoom(false);
+  previewZoom.hidden = true;
   updatePreviewControls(index);
   previewStage.setAttribute('aria-busy', 'true');
   previewLoading.hidden = true;
@@ -169,7 +191,8 @@ async function showPreviewSlide(index, animate = true) {
   previewCounter.setAttribute('aria-label', '第 ' + (index + 1) + ' 张，共 ' + previewSlides.length + ' 张');
   previewStage.setAttribute('aria-busy', 'false');
   previewLoading.hidden = true;
-  preview.querySelector('#image-preview-title').textContent = isInteractive ? '高清预览' : '高清预览 · 点击画面退出';
+  previewZoom.hidden = isVideo;
+  previewTitle.textContent = mobilePreview.matches || isInteractive ? '高清预览' : '高清预览 · 点击画面退出';
   if (isVideo) incoming.play().catch(() => {});
   if (!shouldAnimate) {
     unmountInteractive(previous);
@@ -211,16 +234,27 @@ document.querySelectorAll('.case-slide a').forEach(link => {
 });
 previousButton.addEventListener('click', () => showPreviewSlide(previewIndex - 1));
 nextButton.addEventListener('click', () => showPreviewSlide(previewIndex + 1));
+previewZoom.addEventListener('click', () => {
+  stopPreviewMotion();
+  setPreviewZoom(!preview.classList.contains('is-zoomed'));
+});
+mobilePreview.addEventListener('change', event => {
+  if (!event.matches && preview.classList.contains('is-zoomed')) setPreviewZoom(false);
+});
 preview.addEventListener('keydown', event => {
+  if (preview.classList.contains('is-zoomed')) return;
   if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
   event.preventDefault();
   showPreviewSlide(previewIndex + (event.key === 'ArrowRight' ? 1 : -1));
 });
 preview.addEventListener('click', event => {
-  if (event.target === preview || event.target.closest('.preview-stage') || event.target.closest('.preview-close')) preview.close();
+  if (event.target === preview || event.target.closest('.preview-close') ||
+      (event.target.closest('.preview-stage') && !preview.classList.contains('is-zoomed'))) preview.close();
 });
 preview.addEventListener('close', () => {
   ++previewRequest;
+  setPreviewZoom(false);
+  previewZoom.hidden = true;
   stopPreviewMotion();
   renderedPreviewIndex = -1;
   previewImage.pause?.();

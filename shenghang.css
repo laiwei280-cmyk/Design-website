@@ -87,7 +87,7 @@ main { max-width: 2000px; margin-left: var(--sidebar); padding: 28px 32px 0; out
 .project-contact-work { display: inline-flex; justify-content: space-between; align-items: center; gap: 32px; padding: 16px 21px; border-radius: 3px; color: white; background: #272a26; font-size: 12px; }
 @media (min-width: 801px) and (max-height: 600px) { .chapter-nav a { padding-block: 8px; } }
 @media (max-width: 1100px) { :root { --sidebar: 230px; } .project-sidebar { padding-inline: 16px; } main { padding-inline: 24px; } }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   html { scroll-padding-top: calc(var(--site-header-height) + 116px); }
   .project-sidebar { position: sticky; inset: var(--site-header-height) 0 auto; width: 100%; max-height: none; padding: 14px 18px 0; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; box-shadow: none; background: #f7f7f4f5; backdrop-filter: blur(16px); overflow: visible; }
   .back-link { width: auto; margin-bottom: 0; padding-bottom: 0; border-bottom: 0; font-size: 11px; min-height: 24px; }

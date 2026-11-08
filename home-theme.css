@@ -67,6 +67,16 @@
 @media (max-width: 360px) {
   .site-footer .footer-contact { gap: 12px; font-size: 28px; }
 }
+@media (max-width: 600px) {
+  .hero .hero-biography, .capabilities-summary, .work-showcase-summary,
+  .capabilities-item > p, .work-placeholder-body > p { font-size: 14px; line-height: 1.75; }
+  .hero .hero-actions { gap: 10px; }
+  .hero .hero-actions > a { min-height: 44px; }
+  .capabilities .resume-box strong { font-size: 13px; }
+  .capabilities .resume-link { font-size: 12px; }
+  .site-footer .footer-top { gap: 18px; }
+  .site-footer .footer-contact { align-self: flex-start; min-height: 44px; margin: 0; font-size: 20px; }
+}
 
 dialog { border-color: var(--line); box-shadow: 0 20px 90px #31486726; }
 dialog::backdrop { background: #62768f66; }

@@ -57,13 +57,26 @@
   const preview = document.createElement('dialog');
   preview.className = 'project-artwork-preview';
   preview.setAttribute('aria-labelledby', 'project-artwork-preview-title');
-  preview.innerHTML = '<div class="project-artwork-preview-toolbar"><h2 id="project-artwork-preview-title">高清预览 · 再次点击退出</h2><button type="button" aria-label="关闭高清预览" autofocus>×</button></div><div class="project-artwork-preview-stage"><img alt=""></div>';
+  preview.innerHTML = '<div class="project-artwork-preview-toolbar"><h2 id="project-artwork-preview-title">高清预览 · 再次点击退出</h2><button class="mobile-preview-zoom" type="button">放大阅读</button><button type="button" aria-label="关闭高清预览" autofocus>×</button></div><div class="project-artwork-preview-stage"><img alt=""></div>';
   document.body.append(preview);
   const image = preview.querySelector('img');
   const title = preview.querySelector('h2');
+  const zoomButton = preview.querySelector('.mobile-preview-zoom');
+  const closeButton = preview.querySelector('[autofocus]');
+  const stage = preview.querySelector('.project-artwork-preview-stage');
+  const mobilePreview = matchMedia('(max-width: 900px)');
   const root = document.documentElement;
   let opener;
   let position = { x: 0, y: 0 };
+  let chapterName;
+
+  function setZoom(zoomed) {
+    preview.classList.toggle('is-zoomed', zoomed);
+    zoomButton.textContent = zoomed ? '适应屏幕' : '放大阅读';
+    const mode = zoomed ? '滑动查看细节' : mobilePreview.matches ? '高清预览' : '高清预览 · 再次点击退出';
+    title.textContent = chapterName + ' · ' + mode;
+    stage.scrollTo({ left: 0, top: 0, behavior: 'instant' });
+  }
 
   for (const link of links) {
     link.setAttribute('aria-haspopup', 'dialog');
@@ -75,13 +88,19 @@
       const source = link.querySelector('img');
       image.src = link.href;
       image.alt = source.alt;
-      title.textContent = (link.closest('#project-research') ? '调研' : '探索') + ' · 高清预览 · 再次点击退出';
+      chapterName = link.closest('#project-research') ? '调研' : '探索';
+      setZoom(false);
       root.style.setProperty('--project-preview-gutter', Math.max(0, window.innerWidth - root.clientWidth) + 'px');
       root.classList.add('project-artwork-preview-open');
       preview.showModal();
     });
   }
-  preview.addEventListener('click', () => preview.close());
+  zoomButton.addEventListener('click', () => setZoom(!preview.classList.contains('is-zoomed')));
+  closeButton.addEventListener('click', () => preview.close());
+  mobilePreview.addEventListener('change', () => { if (preview.open) setZoom(false); });
+  preview.addEventListener('click', event => {
+    if (!event.target.closest('button') && (event.target === preview || !preview.classList.contains('is-zoomed'))) preview.close();
+  });
   preview.addEventListener('close', () => {
     root.classList.remove('project-artwork-preview-open');
     root.style.removeProperty('--project-preview-gutter');
