@@ -13,6 +13,7 @@ const badgeBack = badgeCard.querySelector('.badge-back');
 const badgeFrontButton = badgeCard.querySelector('.badge-front-trigger');
 const badgeBackButton = badgeCard.querySelector('.badge-back-toggle');
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+const compactBadge = window.matchMedia('(max-width: 600px)');
 
 // Position, eyelet swing, depth tilt and the half turn share one continuous clock.
 // Damped springs retain velocity when the next click arrives during a movement.
@@ -172,7 +173,7 @@ function playBadgeEntrance() {
   setBadgeFace(false, badgeBack.contains(document.activeElement), false);
   badgePose.twist.target = 0;
   badgePose.twist.value = 0;
-  if (motionPreference.matches) {
+  if (motionPreference.matches || compactBadge.matches) {
     settleBadgePose();
     badgeStage.dataset.entrance = 'shown';
     badgeStage.inert = false;
@@ -202,6 +203,10 @@ function scheduleBadgeEntrance() {
   badgeStage.inert = true;
   settleBadgePose();
   if (document.visibilityState === 'hidden') return;
+  if (compactBadge.matches) {
+    playBadgeEntrance();
+    return;
+  }
   badgeEntranceTimer = setTimeout(() => {
     badgeEntranceTimer = null;
     if (badgeInView) playBadgeEntrance();

@@ -9,7 +9,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/play-bold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="badge.css">
+  <link rel="stylesheet" href="badge.css?v=20261108-hero">
   <link rel="stylesheet" href="capability.css">
   <link rel="stylesheet" href="projects.css">
   <link rel="stylesheet" href="site-header.css">
@@ -17,7 +17,7 @@
   <script src="app.js" defer></script>
   <script src="hero-dots.js" defer></script>
   <script src="badge-metal.js" defer></script>
-  <script src="badge.js" defer></script>
+  <script src="badge.js?v=20261108-hero" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳至主要内容</a>
@@ -37,8 +37,9 @@
         <div class="hero-copy hero-identity">
           <p class="hero-greeting">Hello, I'm</p>
           <h1 id="hero-title"><span class="hero-name-cn">魏莱</span><span class="hero-name-en">Vivian</span></h1>
-          <h2 class="hero-role">UI UX设计师</h2>
-          <p class="hero-biography">我是南京艺术学院27届工业设计产品智能交互专业，<strong>有B端TMS产品和C端APP改版的落地设计经验，专注于Vibe Coding 设计实践</strong>。我关注复杂业务里的清晰表达，把信息架构、交互路径和视觉系统整理成可落地、可复用、可持续迭代的产品体验。</p>
+          <h2 class="hero-role"><span class="hero-desktop-only">UI UX设计师</span><span class="hero-mobile-only">UI / UX 设计师</span></h2>
+          <p class="hero-biography hero-desktop-only">我是南京艺术学院27届工业设计产品智能交互专业，<strong>有B端TMS产品和C端APP改版的落地设计经验，专注于Vibe Coding 设计实践</strong>。我关注复杂业务里的清晰表达，把信息架构、交互路径和视觉系统整理成可落地、可复用、可持续迭代的产品体验。</p>
+          <p class="hero-biography hero-mobile-only">有 B 端 TMS 和 C 端 APP 改版经验。<br>专注于 Vibe Coding 设计实践。</p>
           <div class="hero-actions">
             <a class="hero-pill hero-pill-primary" href="shenghang.html">查看项目</a>
             <a class="hero-pill hero-pill-secondary" href="resume.html" data-resume-entry aria-describedby="resume-status">简历入口</a>
@@ -59,7 +60,7 @@
                   <button class="badge-front-trigger" data-badge-toggle aria-label="翻转工牌，查看微信二维码及联系方式">
                     <span class="badge-topline" aria-hidden="true"><span>DESIGN PORTFOLIO</span><span>V. / 2026</span></span>
                     <img id="portrait" class="badge-portrait" src="assets/portrait.png" alt="魏莱 Vivian 的自然彩色人像，佩戴圆框眼镜，身着浅灰色外套" width="1122" height="1402" fetchpriority="high">
-                    <span class="badge-front-footer"><span class="badge-name">WEI LAI<small>VIVIAN / UI DESIGNER</small></span><span class="badge-flip-label">CLICK TO FLIP <span aria-hidden="true">↻</span><small>点击翻转</small></span></span>
+                    <span class="badge-front-footer"><span class="badge-name hero-desktop-only">WEI LAI<small>VIVIAN / UI DESIGNER</small></span><span class="badge-flip-label hero-desktop-only">CLICK TO FLIP <span aria-hidden="true">↻</span><small>点击翻转</small></span><span class="hero-mobile-only">点击翻转 <span aria-hidden="true">↻</span></span></span>
                   </button>
                 </div>
                 <div class="badge-face badge-back" aria-hidden="true" inert>
@@ -76,7 +77,7 @@
           <canvas class="badge-metal-canvas" aria-hidden="true"></canvas>
         </div>
       </div>
-      <div class="hero-bottom"><p>用清晰的设计，<span>连接人与产品。</span></p><div class="hero-principles"><span>以用户为中心</span><i></i><span>让复杂变简单</span><i></i><span>把细节做到位</span></div><a class="scroll-link" href="#expertise">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a></div>
+      <div class="hero-bottom"><p>用清晰的设计，<span>连接人与产品。</span></p><div class="hero-principles"><span>以用户为中心</span><i></i><span>让复杂变简单</span><i></i><span>把细节做到位</span></div><a class="scroll-link" href="#expertise"><b class="hero-desktop-only">SCROLL TO EXPLORE</b><b class="hero-mobile-only">向下浏览</b><span aria-hidden="true">↓</span></a></div>
     </section>
 
     <section id="expertise" class="expertise section-shell capabilities" aria-labelledby="expertise-title">
